@@ -7,8 +7,8 @@ module.exports ={
     client : 'mssql',
     connection: {
       server : 'localhost',
-      user : 'bangucup',
-      password : 'AAkjOz99',
+      user : 'username here',
+      password : 'password here',
       database:'knpi',
       options: {
           port: 1433,
