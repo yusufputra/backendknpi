@@ -1,0 +1,12 @@
+name: init PR
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - master
+      
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ github.event.number }}
