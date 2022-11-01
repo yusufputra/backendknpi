@@ -17,4 +17,5 @@ jobs:
           echo "$labels"
           echo MERGE_REQUEST_LABELS="$labels" >> $GITHUB_ENV
           echo "$MERGE_REQUEST_LABELS"
+          echo "test"
           echo "${{ env.MERGE_REQUEST_LABELS }}"
