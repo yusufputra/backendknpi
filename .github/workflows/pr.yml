@@ -14,7 +14,7 @@ jobs:
           echo ${GITHUB_SHA}
           export MERGE_REQUEST_DATA="$(curl -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" https://api.github.com/repos/yusufputra/backendknpi/commits/${GITHUB_SHA}/pulls)"
           echo $MERGE_REQUEST_DATA
-          export labels="$(node -e "console.log( ${MERGE_REQUEST_DATA}[0].labels.map((item)=>item.name).join(',') || 'nolabels' )")"
+          export labels="$(node -e "console.log( (${MERGE_REQUEST_DATA})[0].labels.map((item)=>item.name).join(',') || 'nolabels' )")"
           echo "$labels"
           echo MERGE_REQUEST_LABELS="$labels" >> $GITHUB_ENV
           echo "$MERGE_REQUEST_LABELS"
